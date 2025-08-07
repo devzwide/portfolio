@@ -1,2 +1,3 @@
-# portfolio
-Portfolio application that showcase my Software Engineering and DevOps with AWS skills
+# Bukeka Nxumalo Portfolio
+
+This repository contains my React application for my portfoli display my Software, DevOps and Cloud Engineering skills.

@@ -1,4 +1,4 @@
-import { createBrowserRouter,Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Index from "../client/Index.jsx";
 import Home from "../pages/Home.jsx";
 import About from "../pages/About.jsx";
@@ -28,10 +28,7 @@ const router = createBrowserRouter([
             },
         ],
     },
-    {
-        path: "/index.html",
-        element: <Navigate to="/" replace />,
-    },
+
 ]);
 
 export default router;

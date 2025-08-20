@@ -25,12 +25,12 @@ const Index = () => {
             path: '/',
             icon: <HomeIcon size={20} />
         },
-        // {
-        //     name: 'Chat',
-        //     path: '/chat',
-        //     icon: <MessageCircleCode size={20} />
+        {
+            name: 'Chat',
+            path: '/chat',
+            icon: <MessageCircleCode size={20} />
 
-        // },
+        },
         {
             name: 'About',
             path: '/about',

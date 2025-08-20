@@ -4,6 +4,7 @@ import Home from "../pages/Home.jsx";
 import About from "../pages/About.jsx";
 import Portfolio from "../pages/Portfolio.jsx";
 import Testimonials from "../pages/Testimonials.jsx";
+import Assistant from "../pages/Assistant.jsx";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "testimonials",
                 element: <Testimonials />,
+            },
+            {
+                path: "chat",
+                element: <Assistant />,
             },
         ],
     },

@@ -20,7 +20,7 @@ const Home = () => {
                     Hi, I'm <span className="text-blue-400">Bukeka Nxumalo</span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 mb-8">
-                    A forward-thinking ICT student building a career in cloud computing, with a growing portfolio in Software Engineering, DevOps, and Cloud Engineering.
+                    ICT student building a career in Cloud Computing, with a growing portfolio in Software Engineering.
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4">

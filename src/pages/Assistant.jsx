@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Bot, Search, SendIcon, User, Zap } from "lucide-react";
+import { Bot, MessageCircleCode, Search, SendIcon, User, Zap } from "lucide-react";
 
 const API_URL = "http://bukeka-chatbot-env.eba-irvjuw2g.us-east-1.elasticbeanstalk.com/api/chat";
 
@@ -64,18 +64,9 @@ const Assistant = () => {
         <div className="flex flex-col h-screen">
             <div className="bg-white border-b border-gray-200 p-4 md:p-6">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">Chatbot Assistant</h1>
-                    <p className="text-gray-600 mt-2">Powered by Google Gemini 2.5 Flash model</p>
-
-                    <div className="mt-4 flex flex-wrap gap-3">
-                        <div className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
-                            <Zap className="h-3.5 w-3.5" />
-                            <span>Streaming responses</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">
-                            <Search className="h-3.5 w-3.5" />
-                            <span>Google Search integration</span>
-                        </div>
+                    <div className="mt-4 flex justify-between items-center">
+                        <p className="text-gray-600 mt-2">Powered by Google Gemini</p>
+                        <img src="https://www.gstatic.com/lamda/images/gemini_sparkle_aurora_33f86dc0c0257da337c63.svg" alt="Gemini" className="w-8 h-8" />
                     </div>
                 </div>
             </div>
@@ -120,42 +111,15 @@ const Assistant = () => {
                 </div>
             </div>
 
-            {/* <div className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
-                {!isUser && (
-                    <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                            <Bot className="h-5 w-5" />
-                        </div>
-                    </div>
-                )}
-
-                <div className={`max-w-[80%] ${isUser ? 'bg-blue-600 text-white' : 'bg-white border border-gray-200'} rounded-lg px-4 py-3`}>
-                    <div className="prose prose-sm">
-                        {message}
-                        {isStreaming && (
-                            <span className="inline-block ml-1 w-2 h-4 bg-gray-400 animate-pulse"></span>
-                        )}
-                    </div>
-                </div>
-
-                {isUser && (
-                    <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600">
-                            <User className="h-5 w-5" />
-                        </div>
-                    </div>
-                )}
-            </div> */}
-
             <div className="bg-white border-t border-gray-200 p-4 md:p-6">
                 <div className="max-w-4xl mx-auto">
                     <form onSubmit={handleSubmit} className="flex justify-center items-center gap-2">
-                        <div className="flex-1 relative">
+                        <div className="flex-1 relative border border-gray-300 rounded-full flex items-center px-2">
                             <textarea
                                 ref={textareaRef}
                                 value={message}
                                 placeholder="Type your message..."
-                                className="w-full border border-gray-300 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                                className="w-full py-3 px-4 focus:outline-none resize-none"
                                 rows={1}
                                 disabled={disabled}
                                 onChange={(e) => setMessage(e.target.value)}
@@ -166,19 +130,22 @@ const Assistant = () => {
                                     }
                                 }}
                             />
+                            <button
+                                type="submit"
+                                className={`p-2 rounded-full ${
+                                    !message.trim() || disabled
+                                        ? "bg-gray-500 text-white"
+                                        : "bg-blue-500 text-white hover:bg-blue-700"
+                                } flex items-center justify-center`}
+                                disabled={!message.trim() || disabled}
+                            >
+                                <SendIcon className="h-4 w-4" />
+                            </button>
                         </div>
-                        <button
-                            type="submit"
-                            className={`p-3 rounded-lg ${
-                                !message.trim() || disabled
-                                    ? "bg-gray-200 text-gray-400"
-                                    : "bg-blue-600 text-white hover:bg-blue-700"
-                            } flex items-center justify-center`}
-                            disabled={!message.trim() || disabled}
-                        >
-                            <SendIcon className="h-5 w-5" />
-                        </button>
                     </form>
+                    <div className="text-xs text-center mt-2 text-gray-500">
+                        I'm an AI still under development. My responses may not always be perfect. Please use your best judgment.
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FolderIcon, HomeIcon, MessageSquareQuoteIcon, UserIcon, MenuIcon, XIcon, MessageCircleCode } from "lucide-react";
+import { FolderIcon, HomeIcon, MessageSquareQuoteIcon, UserIcon, MenuIcon, XIcon, MessageCircleCode, PanelRightOpen } from "lucide-react";
 
 const Index = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth >= 768);
@@ -41,19 +41,19 @@ const Index = () => {
             path: '/portfolio',
             icon: <FolderIcon size={20} />
         },
-        {
-            name: 'Testimonials',
-            path: '/testimonials',
-            icon: <MessageSquareQuoteIcon size={20} />
-        }
+        // {
+        //     name: 'Testimonials',
+        //     path: '/testimonials',
+        //     icon: <MessageSquareQuoteIcon size={20} />
+        // }
     ];
 
     const SidebarContent = () => (
         <>
             <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                <h1 className="text-2xl font-extrabold text-white">Dev Zwide</h1>
+                <img src="/favicon.png" alt="Developer Zwide" className="w-8 h-8" />
                 <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-white">
-                    <XIcon size={24} />
+                    <PanelRightOpen size={22} />
                 </button>
             </div>
             <nav className="mt-6">
@@ -74,6 +74,9 @@ const Index = () => {
                     ))}
                 </ul>
             </nav>
+            <div className="w-full h-[340px] p-4 my-0 overflow-y-auto">
+                {/* Scrollable area */}
+            </div>
             <div className="absolute bottom-0 w-full p-4">
                 <div className="flex items-center space-x-2">
                     <img
@@ -106,10 +109,9 @@ const Index = () => {
             {/* Main Content */}
             <div className="flex-1 flex flex-col overflow-hidden">
                 <header className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border-b dark:border-gray-700 md:hidden">
-                    <button onClick={() => setIsSidebarOpen(true)} className="text-gray-500 dark:text-gray-400">
+                    <button onClick={() => setIsSidebarOpen(true)} className="text-white">
                         <MenuIcon size={24} />
                     </button>
-                    <h1 className="text-xl font-bold text-gray-800 dark:text-white">Dev Zwide</h1>
                 </header>
                 <main className="flex-1 overflow-x-hidden overflow-y-auto">
                     <Outlet />

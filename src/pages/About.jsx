@@ -4,23 +4,13 @@ import { CodeIcon, CloudIcon, DatabaseIcon, GitBranchIcon, CpuIcon, ServerIcon, 
 
 const skills = [
     { name: "React.js", icon: <CodeIcon className="w-8 h-8 mx-auto" /> },
-    { name: "Tailwind CSS", icon: <CodeIcon className="w-8 h-8 mx-auto" /> },
-    { name: "HTML5 & CSS3", icon: <CodeIcon className="w-8 h-8 mx-auto" /> },
-    { name: "JavaScript", icon: <CodeIcon className="w-8 h-8 mx-auto" /> },
-    { name: "Python", icon: <CodeIcon className="w-8 h-8 mx-auto" /> },
-    { name: "Node.js", icon: <ServerIcon className="w-8 h-8 mx-auto" /> },
     { name: "Express.js", icon: <ServerIcon className="w-8 h-8 mx-auto" /> },
     { name: "Flask", icon: <ServerIcon className="w-8 h-8 mx-auto" /> },
+    { name: "MongoDB", icon: <DatabaseIcon className="w-8 h-8 mx-auto" /> },
+    { name: "PostgreSQL", icon: <DatabaseIcon className="w-8 h-8 mx-auto" /> },
     { name: "Git & GitHub", icon: <GitBranchIcon className="w-8 h-8 mx-auto" /> },
-    { name: "JSON", icon: <DatabaseIcon className="w-8 h-8 mx-auto" /> },
-    { name: "Gemini API", icon: <BotIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS CodePipeline", icon: <WorkflowIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS CodeBuild", icon: <CpuIcon className="w-8 h-8 mx-auto" /> },
-    { name: "Bash", icon: <TerminalIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS EC2", icon: <CloudIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS S3", icon: <CloudIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS IAM", icon: <ShieldCheckIcon className="w-8 h-8 mx-auto" /> },
-    { name: "AWS CLI", icon: <TerminalIcon className="w-8 h-8 mx-auto" /> },
+    { name: "CI/CD", icon: <WorkflowIcon className="w-8 h-8 mx-auto" /> },
+    { name: "AWS", icon: <CloudIcon className="w-8 h-8 mx-auto" /> },
 ];
 
 const About = () => {

@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Bot, MessageCircleCode, Search, SendIcon, User, Zap } from "lucide-react";
 
-const API_URL = "http://bukeka-chatbot-env.eba-irvjuw2g.us-east-1.elasticbeanstalk.com/api/chat";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Assistant = () => {
     const [messages, setMessages] = useState([]);

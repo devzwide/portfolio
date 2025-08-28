@@ -13,8 +13,8 @@ This is a personal portfolio web application built with **React**, showcasing my
 ## Technologies Used
 
 - React 19
-- React Router DOM
-- Tailwind CSS
+- React Router DOM 7
+- Tailwind CSS 4
 - Framer Motion (animations)
 - Lucide React (icons)
 - Tailwind Merge
@@ -58,7 +58,7 @@ npm run preview
 
 ## Deployment
 
-This project is configured for AWS CodePipeline/CodeBuild using [`buildspec.yml`](buildspec.yml).
+This project is configured for AWS CodePipeline/CodeBuild using a `buildspec.yml` file (add one if deploying to AWS).
 
 ## File Structure
 
@@ -68,6 +68,12 @@ This project is configured for AWS CodePipeline/CodeBuild using [`buildspec.yml`
 - `src/main.jsx` — App entry point
 - `src/main.css` — Tailwind CSS import
 - `public/` — Static assets (images, favicon, etc.)
+
+## Notes
+
+- **Images:** Place your images (e.g., `/about.jpg`, `/zwide.jpeg`, `/campus-security.png`, `/tute-me.png`, `/favicon.png`, `/hero.png`) in the `public/` directory.
+- **Chatbot:** The Assistant page connects to a backend API (see `src/pages/Assistant.jsx`). Update the `API_URL` if you deploy your own backend.
+- **Sidebar Navigation:** Edit navigation links in [`src/client/Index.jsx`](src/client/Index.jsx).
 
 ## License
 
